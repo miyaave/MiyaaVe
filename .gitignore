@@ -1,0 +1,6 @@
+vendor
+logs
+.idea
+.env
+/composer.lock
+uploads
