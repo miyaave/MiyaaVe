@@ -40,6 +40,6 @@
     "preferred-install": "dist",
     "sort-packages": true
   },
-  "minimum-stability": "master",
+  "minimum-stability": "dev",
   "prefer-stable": true
 }
