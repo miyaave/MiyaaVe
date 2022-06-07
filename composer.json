@@ -14,8 +14,6 @@
   },
   "require": {
     "php": "^7.4|^8.0",
-    "ext-json": "*",
-    "ext-pdo": "*",
     "firebase/php-jwt": "^6.0",
     "php-curl-class/php-curl-class": "^9.5",
     "phpmailer/phpmailer": "^6.5",
@@ -40,6 +38,6 @@
     "preferred-install": "dist",
     "sort-packages": true
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true
 }
