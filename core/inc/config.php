@@ -8,10 +8,10 @@ $dir = $_SERVER['DOCUMENT_ROOT'];
 
 return [
     'database' => [
-        'name' =>  getenv('DATABASE_NAME'),
+        'name' => getenv('DATABASE_NAME'),
         'username' => getenv('DATABASE_USERNAME'),
         'password' => getenv('DATABASE_PASSWORD'),
-        'connection' => 'mysql:host='.getenv('DATABASE_HOST'),
+        'connection' => 'mysql:host=' . getenv('DATABASE_HOST'),
         'options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_CASE => PDO::CASE_NATURAL
