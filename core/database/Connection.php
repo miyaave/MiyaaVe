@@ -5,6 +5,7 @@ namespace core\database;
 use core\router\App;
 use PDO;
 use PDOException;
+
 class Connection
 {
     /*
@@ -14,13 +15,12 @@ class Connection
     {
         try {
             return new PDO(
-                $config['connection'].';dbname='.$config['name'],
+                $config['connection'] . ';dbname=' . $config['name'],
                 $config['username'],
                 $config['password'],
                 $config['options']
             );
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             App::logError('There was a PDO Exception. Details: ' . $e);
             if (App::get('config')['options']['debug']) {
                 header('HTTP/1.0 500 PDO Exception Con');
@@ -31,7 +31,6 @@ class Connection
         }
     }
 }
-
 
 
 ?>

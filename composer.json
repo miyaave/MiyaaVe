@@ -17,7 +17,8 @@
     "firebase/php-jwt": "^6.0",
     "php-curl-class/php-curl-class": "^9.5",
     "phpmailer/phpmailer": "^6.5",
-    "twig/twig": "^3.0"
+    "twig/twig": "^3.0",
+    "ext-pdo": "*"
   },
   "require-dev": {
     "overtrue/phplint": "3.0",

@@ -9,6 +9,7 @@
                 top: 1.5rem;
             }
         }
+
         body {
             background-color: #000;
             color: #fff;
@@ -16,6 +17,7 @@
             font-family: "Open Sans", serif;
             font-size: 1.3rem;
         }
+
         body h1 {
             font-size: 2.5rem;
         }
@@ -33,9 +35,11 @@
             top: 1rem;
             animation: floating 1s infinite alternate ease-in-out;
         }
+
         .gandalf div {
             position: absolute;
         }
+
         .gandalf::before {
             content: "";
             position: absolute;
@@ -46,6 +50,7 @@
             background-color: #1a2130;
             border-radius: 50%;
         }
+
         .gandalf .fireball {
             bottom: -10px;
             left: 50px;
@@ -55,6 +60,7 @@
             background: radial-gradient(#efac41, #de8531, #6c1305, black);
             border: 5px solid #000;
         }
+
         .gandalf .skirt {
             bottom: 50px;
             left: 100px;
@@ -63,6 +69,7 @@
             border-right: 100px solid transparent;
             filter: drop-shadow(0 0 6px #d4d4d4);
         }
+
         .gandalf .skirt::before {
             content: "";
             position: absolute;
@@ -74,6 +81,7 @@
             border-bottom-right-radius: 180%;
             border-bottom-left-radius: 100%;
         }
+
         .gandalf .skirt::after {
             content: "";
             position: absolute;
@@ -85,12 +93,14 @@
             border-bottom-right-radius: 80%;
             border-bottom-left-radius: 180%;
         }
+
         .gandalf .sleeves::before, .gandalf .sleeves::after {
             content: "";
             position: absolute;
             border-bottom: 70px solid #ededed;
             filter: drop-shadow(0 0 6px #d4d4d4);
         }
+
         .gandalf .sleeves::before {
             top: 130px;
             left: 191px;
@@ -98,6 +108,7 @@
             border-right: 40px solid transparent;
             transform: rotate(-34deg);
         }
+
         .gandalf .sleeves::after {
             top: 127px;
             left: 70px;
@@ -105,6 +116,7 @@
             border-right: 100px solid transparent;
             transform: rotate(41deg);
         }
+
         .gandalf .shoulders {
             background-color: #ededed;
             border-radius: 50%;
@@ -113,6 +125,7 @@
             left: 150px;
             top: 120px;
         }
+
         .gandalf .shoulders .hand {
             width: 33px;
             height: 26px;
@@ -120,10 +133,12 @@
             background-color: #ffd8ad;
             top: -6px;
         }
+
         .gandalf .shoulders .left {
             left: -70px;
             transform: rotate(-20deg);
         }
+
         .gandalf .shoulders .left::after {
             content: "";
             position: absolute;
@@ -136,10 +151,12 @@
             top: -48px;
             left: -56px;
         }
+
         .gandalf .shoulders .right {
             right: -70px;
             transform: rotate(20deg);
         }
+
         .gandalf .shoulders .right::after {
             content: "";
             position: absolute;
@@ -152,6 +169,7 @@
             bottom: -100px;
             left: 0;
         }
+
         .gandalf .head {
             width: 80px;
             height: 90px;
@@ -160,11 +178,13 @@
             background-color: #ffd8ad;
             border-radius: 50%;
         }
+
         .gandalf .head::before, .gandalf .head::after {
             content: "";
             position: absolute;
             background-color: #000;
         }
+
         .gandalf .head::before {
             width: 13px;
             height: 5px;
@@ -173,6 +193,7 @@
             left: 22px;
             transform: rotate(19deg);
         }
+
         .gandalf .head::after {
             width: 13px;
             height: 5px;
@@ -181,6 +202,7 @@
             right: 22px;
             transform: rotate(-19deg);
         }
+
         .gandalf .head .hair {
             width: 70px;
             height: 30px;
@@ -189,12 +211,14 @@
             top: 0px;
             left: 5px;
         }
+
         .gandalf .head .hair::before, .gandalf .head .hair::after {
             content: "";
             position: absolute;
             background-color: #c2beb5;
             filter: drop-shadow(2px 5px 0 #aba599);
         }
+
         .gandalf .head .hair::before {
             top: 13px;
             left: -16px;
@@ -206,6 +230,7 @@
             border-bottom-right-radius: 20px;
             transform: rotate(8deg);
         }
+
         .gandalf .head .hair::after {
             top: 13px;
             right: -16px;
@@ -217,6 +242,7 @@
             border-bottom-right-radius: 100px;
             transform: rotate(-10deg);
         }
+
         .gandalf .head .beard {
             top: 64px;
             left: 5px;
@@ -226,6 +252,7 @@
             border-radius: 30px;
             filter: drop-shadow(2px 5px 0 #aba599);
         }
+
         .gandalf .head .beard::before {
             content: "";
             position: absolute;
@@ -241,23 +268,23 @@
 </head>
 
 <body>
-        <div class="gandalf">
-            <div class="fireball"></div>
-            <div class="skirt"></div>
-            <div class="sleeves"></div>
-            <div class="shoulders">
-                <div class="hand left"></div>
-                <div class="hand right"></div>
-            </div>
-            <div class="head">
-                <div class="hair"></div>
-                <div class="beard"></div>
-            </div>
-        </div>
-        <div class="message">
-            <h1>404 - Not Found</h1>
-            <p>The page you are looking not found.</p>
-        </div>
+<div class="gandalf">
+    <div class="fireball"></div>
+    <div class="skirt"></div>
+    <div class="sleeves"></div>
+    <div class="shoulders">
+        <div class="hand left"></div>
+        <div class="hand right"></div>
+    </div>
+    <div class="head">
+        <div class="hair"></div>
+        <div class="beard"></div>
+    </div>
+</div>
+<div class="message">
+    <h1>404 - Not Found</h1>
+    <p>The page you are looking not found.</p>
+</div>
 </body>
 
 </html>

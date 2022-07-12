@@ -15,6 +15,7 @@ class Router
         'POST' => []
 
     ];
+
     /*
      * This function loads the routes from a file. In this framework, the routes are stored in app/routes.php.
      */
@@ -34,6 +35,7 @@ class Router
     {
         $this->routes['GET'][$uri] = $controller;
     }
+
     /*
      * This function gets the POST route based on the URI and passes it off to the controller.
      */
@@ -41,6 +43,7 @@ class Router
     {
         $this->routes['POST'][$uri] = $controller;
     }
+
     /*
      * This function using array notation routing gets the GET routes. PHP does not support function overloading (also known as method overloading in OOP), so we cannot name this function get even though it has a different number of parameters than the get function used for routing without array notation.
      */
@@ -48,6 +51,7 @@ class Router
     {
         $this->routes['GET'] = $routes;
     }
+
     /*
      * This function using array notation routing gets the POST routes. PHP does not support function overloading (also known as method overloading in OOP), so we cannot name this function post even though it has a different number of parameters than the post function used for routing without array notation.
      */
@@ -93,6 +97,7 @@ class Router
         return iView('error/404');
         //throw new Exception('No route defined for this URI.');
     }
+
     /*
      * This function calls the controller for an action.
      */

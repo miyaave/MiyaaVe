@@ -6,8 +6,8 @@
 namespace core\database;
 
 use core\router\App;
-use RuntimeException;
 use Exception;
+use RuntimeException;
 
 /**
  * Class Model
@@ -43,6 +43,16 @@ abstract class Model
     protected $rows = [];
 
     /**
+     * This static method returns and binds one or more rows in the database to the model.
+     * @return Model[]|false
+     * @throws Exception
+     */
+    public static function all()
+    {
+        return App::DB()->setClassName(static::class)->selectAll(static::$table);
+    }
+
+    /**
      * This method returns the last SQL query by the query builder.
      * @return string
      * @throws Exception
@@ -52,16 +62,9 @@ abstract class Model
         return App::DB()->setClassName(get_class($this))->getSql();
     }
 
-
     public function query($sql)
     {
-
         return App::DB()->setClassName(get_class($this))->query($sql);
-    }
-
-    public function iWhere($column, $table, $condition)
-    {
-        return App::DB()->setClassName(get_class($this))->iWhere($column, $table, $condition);
     }
 
     /**
@@ -104,6 +107,11 @@ abstract class Model
         $this->cols = App::DB()->setClassName(get_class($this))->describe(static::$table);
         $this->rows = App::DB()->setClassName(get_class($this))->selectAllWhere(static::$table, $where, $limit, $offset);
         return $this;
+    }
+
+    public function iWhere($column, $condition)
+    {
+        return App::DB()->setClassName(get_class($this))->iWhere($column, static::$table, $condition);
     }
 
     /**
@@ -157,6 +165,12 @@ abstract class Model
         return App::DB()->updateWhere(static::$table, $parameters, $where);
     }
 
+    public function iUpdate($parameters, $where)
+    {
+
+        return App::DB()->iUpDate(static::$table, $parameters, $where);
+    }
+
     /**
      * This method deletes one or more rows from the database.
      * @return int
@@ -195,16 +209,6 @@ abstract class Model
     }
 
     /**
-     * This static method returns and binds one or more rows in the database to the model.
-     * @return Model[]|false
-     * @throws Exception
-     */
-    public static function all()
-    {
-        return App::DB()->setClassName(static::class)->selectAll(static::$table);
-    }
-
-    /**
      * This method fetches all of the rows for the Model.
      * @return Model[]
      */
@@ -232,7 +236,7 @@ abstract class Model
      */
     public function first()
     {
-        return $this->rows[0] ?? null;
+        return $this->rows[0] ?: null;
     }
 
     /**
@@ -258,7 +262,7 @@ abstract class Model
         if (!$this->cols) {
             $this->cols = App::DB()->setClassName(get_class($this))->describe(static::$table);
         }
-        return $this->{$this->cols[0]->Field} ?? null;
+        return $this->{$this->cols[0]->Field} ?: null;
     }
 
     /**
@@ -271,6 +275,6 @@ abstract class Model
         if (!$this->cols) {
             $this->cols = App::DB()->setClassName(get_class($this))->describe(static::$table);
         }
-        return $this->cols[0]->Field ?? null;
+        return $this->cols[0]->Field ?: null;
     }
 }

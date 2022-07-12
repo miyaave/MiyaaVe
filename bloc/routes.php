@@ -1,14 +1,13 @@
 <?php
 
-use core\router\App;
 use core\router\Router;
 
 
 $router = new Router();
 
 $router->getArray([
-    'rest/api/test' => 'TestController@testGet',
-    'rest/api/test/{id}' => 'TestController@testGetById'
+    'test' => 'TestController@test'
+    #'rest/api/test/{id}' => 'TestController@test'
 ]);
 
 $router->postArray([
