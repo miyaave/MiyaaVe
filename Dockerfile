@@ -1,4 +1,4 @@
-FROM php:7.4.2-apache
+FROM php:7-apache
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql && pecl install apcu && docker-php-ext-enable apcu
 
