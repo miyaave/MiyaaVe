@@ -47,7 +47,7 @@ jobs:
           restore-keys: ${{ runner.os }}-composer-
 
       - name: Install dependencies
-        run: composer install --no-interaction --prefer-dist
+        run: composer install
 
       - name: Run test suite
         run: php -d xdebug.mode=coverage ./vendor/bin/phpunit --coverage-clover=coverage.xml
