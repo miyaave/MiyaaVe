@@ -20,7 +20,7 @@ on:
     # The branches below must be a subset of the branches above
     branches: [ "master" ]
   schedule:
-    - cron: '24 12 * * 2'
+    - cron: '27 15 * * 0'
 
 permissions:
   contents: read
@@ -52,3 +52,9 @@ jobs:
           # Force 0 exit code to allow SARIF file generation
           # This will handover control about PR rejection to the GitHub side
           max-allowed-issues: 2147483647
+
+      # Upload the SARIF file generated in the previous step
+      - name: Upload SARIF results file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: results.sarif
